@@ -1,0 +1,33 @@
+
+公共php   public.php
+登录首页  index.html
+注册页面 zhuce.html
+注册信息传入数据库zhuce.php
+后台首页  admin.php
+登录判断  sign.php
+验证码生成yanzhengma.php
+跳转页面  tiaozhuan.html
+个人信息修改页面 change.php
+修改信息提交   changecheck.php
+密码修改页面   changeone.php
+密码修改判断   changeonecheck.php
+添加栏目页面category.php
+添加栏目  addcategory.php
+管理栏目页面 glcategory.php
+修改栏目名称 addcategoryinfo.php
+删除栏目名称 delCategory.php
+添加内容页面   addContent.php
+提交内容添加   putContent.php
+上传图片      unloadimg.php
+管理内容页面  glContent.php
+删选对应栏目内容 glContent.php
+删除内容      delcontent.php
+编辑内容页面  editcontent.php
+编辑内容提交  putEditContent.php
+添加推荐位页面 position.php
+添加推荐位提交 addPosition.php
+管理推荐位页面 glPosition.php
+编辑推荐位     ediPosition.php
+编辑推荐位提交  editPositioninfo.php
+删除推荐位    delPosition.php
+

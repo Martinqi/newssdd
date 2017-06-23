@@ -1,0 +1,30 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2017/6/16
+ * Time: 11:06
+ */
+header("content-type:text/html;charset=utf8");
+include "checkname.php";
+$name=$_REQUEST['name'];
+$pass=$_REQUEST['pass'];
+$qpass=$_REQUEST['qpass'];
+$email=$_REQUEST['email'];
+$db=new mysqli('sqld.duapp.com','1db02f7fbd234a2ea93fef2c1d0b61dc','98dc4d679d8e4a00ad6d0e96a2e68a94','FVRDsdNWmJjivNemSukK','4050');
+$db->query("set names utf8");
+$sql="insert into member (name,pass,email) VALUES ('$name',$pass,'$email')";
+if(empty($name)||empty($pass)||empty($qpass)||$pass!=$qpass){
+    echo "<script>alert('两次密码不一致');location.href='reg.php'</script>";
+    exit();
+}
+
+if(checkname($db)=="false"){
+    echo "<script>location.href='reg.php'</script>";
+    exit();
+}
+
+$db->query($sql);
+if ($db->affected_rows>0){
+    echo "<script>alert('注册成功');location.href='admin.php'</script>";
+}

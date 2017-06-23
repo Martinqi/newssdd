@@ -1,0 +1,62 @@
+
+form{
+    position: fixed;
+    width: 340px;
+    height: 320px;
+    left:0;
+    bottom: 0;
+    right: 0;
+    top:0;
+    box-shadow: 0 0 2px #ccc;
+    margin:auto;
+    padding-top: 50px;
+    box-sizing: border-box;
+    background:#333333;
+    border-radius: 5px;
+    opacity: .8;
+}
+input{
+    border: none;
+    color: #ccc;
+    text-indent: 20px;
+    background-color:#000;
+}
+label{
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+}
+label:not(:last-child) input {
+    height: 30px;
+    width: 250px;
+}
+label img{
+    width: 60px;
+    height: 30px;
+    vertical-align: bottom;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9px;
+    font-size:14px;
+    margin-left: 55px;
+}
+input.button{
+    display: block;
+    width: 75%;
+    height: 32px;
+    line-height: 32px;
+    background: #158e4a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9px;
+    margin: 20px auto;
+    border: 0;
+    letter-spacing:12px;
+}
+body{
+    background: url("../img/bg.jpg");
+    background-size:cover ;
+}
+

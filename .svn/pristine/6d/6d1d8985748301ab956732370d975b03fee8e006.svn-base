@@ -1,0 +1,27 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2017/5/15
+ * Time: 15:33
+ */
+
+session_start();
+include_once "uploadimg.php";
+include_once "public.php";
+$id=$_SESSION['id'];
+$tid=$_REQUEST['tid'];
+$title=$_REQUEST['title'];
+$content=$_REQUEST['content'];
+$img=$_REQUEST['imgurl'];
+$sql="update onesql.show set title='$title',content='$content',thumb='$img',positionid=$tid WHERE id=$id";
+$result=$db->query($sql);
+if($result){
+    $sess="内容修改成功";
+    $src='glContent.php';
+    include_once ("tiaozhuan.html");
+}else{
+    $sess="内容修改失败";
+    $src='editcontent.php';
+    include_once ("tiaozhuan.html");
+}

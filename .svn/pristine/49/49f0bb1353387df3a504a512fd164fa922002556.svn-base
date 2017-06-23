@@ -1,0 +1,48 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2017/6/15
+ * Time: 16:40
+ */
+include "public.php";
+$sql="select * from category";
+$result=$db->query($sql);
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <link href="../static/css/mui.min.css" rel="stylesheet"/>
+     <link rel="stylesheet" href="../static/css/index1.css">
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="../index.php"></a>
+	    <h1 class="mui-title">新闻详情</h1>
+	</header>
+<div class="box" style="width: 100%;">
+    <?php
+    $id=$_REQUEST['id'];
+    $sql="select * from FVRDsdNWmJjivNemSukK.show WHERE id=$id";
+    $result=$db->query($sql);
+    ?>
+    <?php while ($row=$result->fetch_assoc()):?>
+        <div class="show">
+            <p class="biaoti"><?php echo $row['title']?></p>
+            <p class="time"><?php echo $row['time']?></p>
+            <div class="thumb" style="background-image: url('<?php echo $row['thumb']?>');background-size: cover"></div>
+            <p class="xiangqing">
+                <?php echo $row['content']?>
+            </p>
+        </div>
+    <?php endwhile;?>
+</div>
+</body>
+</html>
+ 

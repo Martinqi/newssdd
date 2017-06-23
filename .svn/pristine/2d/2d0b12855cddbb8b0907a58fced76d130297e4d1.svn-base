@@ -1,0 +1,54 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2017/5/15
+ * Time: 9:32
+ */
+include_once "public.php";
+include_once "../lib/function.php";
+
+$obj=new All();
+$obj->fun($db,'category',0,0);
+
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/managecontent.js"></script>
+</head>
+<style>
+    td img{
+        height: 40px;
+    }
+</style>
+<body>
+<p>上级栏目名称</p>
+<select name="id" id="sel">
+    <option value="0">作为一级栏目</option>
+    <?php echo $obj->str?>
+</select><br>
+<table>
+    <thead>
+    <tr>
+        <th>showid</th>
+        <th>文章标题</th>
+        <th>文章内容</th>
+        <th>时间</th>
+        <th>缩略图</th>
+        <th>所在栏目id</th>
+        <th>推荐位id</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+   <tbody></tbody>
+</table>
+</body>
+</html>

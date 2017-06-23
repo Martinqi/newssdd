@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    form{
+        position: fixed;
+        width: 500px;
+        height: 300px;
+        left:0;
+        bottom: 0;
+        right: 0;
+        top:0;
+        box-shadow: 0 0 2px #ccc;
+        margin:auto;
+        padding-top: 50px;
+        box-sizing: border-box;
+        background: #afd9ee;
+        border-radius: 5px;
+    }
+    .box{
+        width: auto;
+        height:auto;
+        margin-top: 50px;
+        margin-left: 180px;
+    }
+</style>
+<body>
+<form action="">
+    <div class="box">
+        <div>
+            <?php echo $sess?>
+        </div>
+        <p>页面会在<span>3</span>秒后跳转</p>
+        <a href="<?php echo $src?>">下一步</a>
+    </div>
+</form>
+</body>
+</html>
+<script>
+    let span=document.querySelector('span');
+    let i=3;
+    let a=document.querySelector('a');
+    let url=a.href;
+    a.onclick=function (e) {
+        e.preventDefault();
+        if (url=='sqld.duapp.com/managementSystem/admin/index.html'){
+            top.location.href=url
+        }else{
+            location.href=url
+        }
+    };
+    setInterval(function () {
+        i--;
+        span.innerHTML=i;
+        if (i===0){
+            if (url=='sqld.duapp.com/managementSystem/admin/index.html'){
+                    top.location.href=url
+                }else{
+                    location.href=url
+                }
+        }
+    },1000);
+</script>
